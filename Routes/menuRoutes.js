@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
         const menuData = req.body; // Assumming the request body contains the menu data
 
         // Create a new menu document using the Mongoose Model
-        const newMenu = new MenuItem(menuData);
+        const newMenu = new menu(menuData);
 
         //Save the new person to the database
         const menuResponse = await newMenu.save();
@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 // GET method to get the menu
 router.get('/', async (req, res) => {
     try {
-        const menuData = await MenuItem.find();
+        const menuData = await menu.find();
         console.log("Data fetched");
         res.status(200).json(menuData);
     }
