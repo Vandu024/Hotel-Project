@@ -1,10 +1,12 @@
 const mongoose =require('mongoose');
+require('dotenv').config();
 
 // Seet the MongoDB Connection URL
-// const mongoURL =  'mongodb://127.0.0.1:27017/hotels';
-const  mongoURL = 'mongodb+srv://admin:admin123@cluster0.bh8tuju.mongodb.net/?retryWrites=true&w=majority';
+// const mongoURL =  process.env.MONGODB_URL_LOCAL;
+const mongoURL = process.env.MONGODB_URL;
 
 // Set up MongoDB Connection
+
 mongoose.connect(mongoURL);
 
 //Get the default Connection
